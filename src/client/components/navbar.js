@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import NavLink from './index';
+import NavLink from './nav-link';
 
 const Wrapper = styled.div`
   flex-shrink: 0;
@@ -33,13 +33,9 @@ const Logo = styled.img`
   }
 `;
 
-const registered = [
-  <NavLink path="/wishlist" text="Wish List"/>
-];
-
 const notRegistered = [
-  <NavLink path="/signin" text="Sign In"/>,
-  <NavLink path="signup" text="Sign Up"/>
+  <NavLink key={ 1 } path="/signin" text="Sign In"/>,
+  <NavLink key={ 2 } path="signup" text="Sign Up"/>
 ];
 
 const NavBar = ({ username, ...props }) => (
@@ -48,7 +44,7 @@ const NavBar = ({ username, ...props }) => (
       <NavLink path="/" text=""><Logo src=""/></NavLink>
     </NavLeft>
     <NavRight>
-      { username ? registered : notRegistered }
+      { username ? <NavLink path="/wishlist" text="Wish List"/> : notRegistered }
     </NavRight>
   </Wrapper>
 );

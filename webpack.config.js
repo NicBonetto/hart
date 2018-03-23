@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: ['babel-polyfill', path.join('src/client/app.js')],
+  entry: ['babel-polyfill', path.join(__dirname, 'src/client/app.js')],
   output: {
     path: path.join(__dirname, '/build/'),
     filename: 'app.bundle.js'
@@ -11,11 +11,18 @@ module.exports = {
     rules: [
       {
         test: /\.js$/, 
-        exlude: /node_modules/,
+        exclude: /node_modules/,
         use : {
           loader: 'babel-loader'
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("dev")
+      }
+    })
+  ]
 }

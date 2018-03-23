@@ -2,11 +2,12 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { Routes } from '../client/components/index';
+import { Routes } from './components/index';
+import store from './store';
 
 render(
   <Provider store={ store }>
     <Routes/>
   </Provider>,
-  document.querySelectory('#root')
+  document.querySelector('#root')
 );

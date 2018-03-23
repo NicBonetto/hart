@@ -6,3 +6,5 @@ const Welcome = () => (
     <NavBar/>
   </React.Fragment>
 );
+
+export default Welcome;
