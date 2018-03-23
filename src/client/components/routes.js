@@ -4,7 +4,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 import history from '../utils/history';
 import routes from '../utils/route-data';
 
-const Routes = () => {
+const Routes = () => (
   <Router history={ history }>
     <Switch>
       {
@@ -19,4 +19,6 @@ const Routes = () => {
       }
     </Switch>
   </Router>
-}
+);
+
+export default Routes;
