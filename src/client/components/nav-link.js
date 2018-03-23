@@ -24,3 +24,10 @@ const NavLink = ({ text, path, ...props }) => {
     </NavWrapper>
   );
 };
+
+NavLink.propTypes = {
+  text: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
+};
+
+export default NavLink;
