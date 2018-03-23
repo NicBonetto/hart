@@ -5,6 +5,11 @@
   "repository": "https://github.com/Hart-Challenge/web-engineer-nicholas-bonetto.git",
   "author": "Nic Bonetto <nick.bonetto@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "babel-node src/server/index.js --presets env",
+    "dev": "yarn webpack && yarn start"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
