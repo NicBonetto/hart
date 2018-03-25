@@ -3,9 +3,6 @@ import { NavBar } from '../components/index';
 import { Jumbo } from '../components/index';
 
 const Welcome = () => (
-  if (!username) {
-    Redirect
-  }
   <React.Fragment>
     <NavBar/>
     <Jumbo/>
