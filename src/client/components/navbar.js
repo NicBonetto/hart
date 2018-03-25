@@ -26,25 +26,20 @@ const NavRight = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 80px;
+  width: 40px;
 
   &:hover {
     cursor: pointer;
   }
 `;
 
-const notRegistered = [
-  <NavLink key={ 1 } path="/signin" text="Sign In"/>,
-  <NavLink key={ 2 } path="/signup" text="Sign Up"/>
-];
-
 const NavBar = ({ username, ...props }) => (
   <Wrapper>
     <NavLeft>
-      <NavLink path="/" text=""><Logo src=""/></NavLink>
+      <NavLink path="/" text=""><Logo src="beer-icon.png"/></NavLink>
     </NavLeft>
     <NavRight>
-      { username ? <NavLink path="/wishlist" text="Wish List"/> : notRegistered }
+      { username ? <NavLink path="/wishlist" text="Wish List"/> : <NavLink path="/auth/login" text="Login"/>}
     </NavRight>
   </Wrapper>
 );
